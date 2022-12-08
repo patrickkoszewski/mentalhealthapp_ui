@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mentalhealthapp_ui/util/emoticon_face.dart';
+import 'package:mentalhealthapp_ui/util/exercise_tile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,10 +15,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.blue[900],
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.message), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
         ],
       ),
       body: SafeArea(
@@ -230,51 +231,33 @@ class _HomePageState extends State<HomePage> {
 
                       //listView of Exercises
                       //gonna repeat a lot of things so create new file
-                      Container(
-                        padding: const EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
+                      Expanded(
+                          child: ListView(children: const [
+                        ExerciseTile(
+                          icon: Icons.favorite,
+                          exerciseName: 'Speaking Skills',
+                          numberofExercises: 16,
+                          color: Colors.orange,
                         ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                const Icon(Icons.favorite),
-                                const SizedBox(
-                                  width: 12,
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    //Title
-                                    const Text(
-                                      'Speaking Skills',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16,
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      height: 5,
-                                    ),
-                                    //Subtitle
-                                    Text(
-                                      '16 exercises',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.grey.shade600,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            const Icon(Icons.more_horiz),
-                          ],
+                        ExerciseTile(
+                          icon: Icons.person,
+                          exerciseName: 'Reading Skills',
+                          numberofExercises: 2,
+                          color: Colors.red,
                         ),
-                      ),
+                        ExerciseTile(
+                          icon: Icons.star,
+                          exerciseName: 'Writing Skills',
+                          numberofExercises: 6,
+                          color: Colors.green,
+                        ),
+                        ExerciseTile(
+                          icon: Icons.monetization_on,
+                          exerciseName: 'Finance Skills',
+                          numberofExercises: 32,
+                          color: Colors.blue,
+                        ),
+                      ])),
                     ],
                   ),
                 ),

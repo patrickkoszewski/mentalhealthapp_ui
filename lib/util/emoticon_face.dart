@@ -15,11 +15,11 @@ class EmoticonFace extends StatelessWidget {
         color: Colors.blue[600],
         borderRadius: BorderRadius.circular(12),
       ),
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Center(
           child: Text(
         emoticonFace,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 28,
         ),
       )),
