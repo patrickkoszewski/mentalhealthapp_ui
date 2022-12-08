@@ -126,7 +126,7 @@ class _HomePageState extends State<HomePage> {
 
                   //4 diffrent faces
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       //bad
                       Column(
@@ -208,7 +208,7 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(25),
-                color: Colors.white,
+                color: Colors.grey[300],
                 child: Center(
                   child: Column(
                     children: [
@@ -224,14 +224,55 @@ class _HomePageState extends State<HomePage> {
                           Icon(Icons.more_horiz),
                         ],
                       ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+
                       //listView of Exercises
                       //gonna repeat a lot of things so create new file
                       Container(
-                        decoration: BoxDecoration(color: Colors.grey.shade300),
-                        child: const ListTile(
-                          leading: Icon(
-                            Icons.favorite,
-                          ),
+                        padding: const EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                const Icon(Icons.favorite),
+                                const SizedBox(
+                                  width: 12,
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    //Title
+                                    const Text(
+                                      'Speaking Skills',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 5,
+                                    ),
+                                    //Subtitle
+                                    Text(
+                                      '16 exercises',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.grey.shade600,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            const Icon(Icons.more_horiz),
+                          ],
                         ),
                       ),
                     ],
