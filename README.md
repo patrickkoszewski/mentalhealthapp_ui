@@ -1,6 +1,8 @@
 # mentalhealthapp_ui
 
-A new Flutter project.
+mentalhealthapp_ui Flutter demo project.
+
+![dribble clone UI design](https://user-images.githubusercontent.com/116440070/206544278-3af189b1-4064-45bf-bd3d-ec80ff20b057.png)
 
 ## Getting Started
 
